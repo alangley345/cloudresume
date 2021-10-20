@@ -14,7 +14,7 @@ jobs:
       - name: Copy file to S3
         shell: bash
         env:
-          access_key: ${{ secrets.ACCESS_KEY }}
+          access_key: ${{ secrets.ACCESS_TOKEN }}
           secret_key: ${{ secrets.SECRET_KEY }}
           s3_bucket: ${{ secrets.BUCKET_NAME }}
         run: |
