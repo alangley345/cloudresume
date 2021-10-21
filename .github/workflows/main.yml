@@ -2,12 +2,11 @@ name: Upload to S3
 
 on:
   push:
-    branches:
-      - main
     paths:
       - '**.js'
       - '**.css'
       - '**.html'
+      - '**.txt'
   workflow_dispatch:
 
 jobs:
