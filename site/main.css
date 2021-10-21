@@ -147,3 +147,16 @@ body{
 
 
 }
+
+.footer{
+  height: 50px;
+
+
+
+  width: 100%;
+
+
+
+  position: fixed;
+
+}
