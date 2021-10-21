@@ -5,7 +5,9 @@ on:
     branches:
       - main
     paths:
-      - '/site/**'
+      - '**.js'
+      - '**.css'
+      - '**.html'
   workflow_dispatch:
 
 jobs:
