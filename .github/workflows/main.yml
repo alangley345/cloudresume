@@ -19,8 +19,11 @@ jobs:
           access_key: ${{ secrets.ACCESS_TOKEN }}
           secret_key: ${{ secrets.SECRET_KEY }}
           s3_bucket: ${{ secrets.BUCKET_NAME }}
+          distribution_ID: ${{secrets.DISTRIBUTION_ID}}
         run: |
           aws configure set aws_access_key_id $access_key
           aws configure set aws_secret_access_key $secret_key 
           aws configure set default.region us-east-2
           aws s3 sync --delete ./site/ s3://$s3_bucket/
+          sleep 5
+          aws cloudfront create-invalidation --distribution-id distribution_ID --paths "/*"
