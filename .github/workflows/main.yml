@@ -4,7 +4,9 @@ on:
   push:
     branches:
       - master
-  workflow_dispatch:
+    paths:
+      - ./site/**
+workflow_dispatch:
 
 jobs:
   upload:
