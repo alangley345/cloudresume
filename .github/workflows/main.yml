@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - ./site/**
+      - '/site/**'
   workflow_dispatch:
 
 jobs:
