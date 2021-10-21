@@ -6,7 +6,6 @@ on:
       - '**.js'
       - '**.css'
       - '**.html'
-      - '**.txt'
   workflow_dispatch:
 
 jobs:
