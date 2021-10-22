@@ -1,21 +1,18 @@
-resource "aws_s3_bucket" "b" {
-  bucket = "s3-website-test.hashicorp.com"
+resource "aws_s3_bucket" "site-bucket" {
+  bucket = "resume.aaronlangley.net"
   acl    = "public-read"
-  policy = file("policy.json")
+  policy = file("site-bucketPolicy.json")
+
+  cors_rule {
+    allowed_headers = ["*"]
+    allowed_methods = []
+    allowed_origins = ["*"]
+    expose_headers  = []
+  }
 
   website {
     index_document = "index.html"
     error_document = "error.html"
 
-    routing_rules = <<EOF
-[{
-    "Condition": {
-        "KeyPrefixEquals": "docs/"
-    },
-    "Redirect": {
-        "ReplaceKeyPrefixWith": "documents/"
-    }
-}]
-EOF
   }
 }
