@@ -7,6 +7,10 @@ resource "aws_cloudfront_distribution" "resumesite" {
   default_root_object = "index.html"
   
   #depends_on = [aws_s3_bucket.site-bucket, aws_acm_certificate.cert]
+  
+   lifecycle {
+    prevent_destroy = true
+  }
 
   default_cache_behavior {
     allowed_methods        = ["DELETE", "GET", "HEAD", "OPTIONS", "PATCH", "POST", "PUT"]
@@ -29,7 +33,7 @@ resource "aws_cloudfront_distribution" "resumesite" {
   }
 
   origin {
-    domain_name = aws_s3_bucket.site-bucket.bucket_regional_domain_name
+    domain_name = aws_s3_bucket.site-bucket.bucket_domain_name
     origin_id   = local.s3_origin_id
 
     #s3_origin_config {
