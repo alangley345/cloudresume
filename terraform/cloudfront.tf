@@ -6,7 +6,7 @@ resource "aws_cloudfront_distribution" "resumesite" {
   enabled             = true
   default_root_object = "index.html"
   
-  depends_on = [aws_s3_bucket.site-bucket, aws_acm_certificate.cert]
+  #depends_on = [aws_s3_bucket.site-bucket, aws_acm_certificate.cert]
 
   default_cache_behavior {
     allowed_methods        = ["DELETE", "GET", "HEAD", "OPTIONS", "PATCH", "POST", "PUT"]
@@ -44,7 +44,8 @@ resource "aws_cloudfront_distribution" "resumesite" {
   }
 
   viewer_certificate {
-    acm_certificate_arn      = aws_acm_certificate.cert.arn
+    cloudfront_default_certificate = true
+    #acm_certificate_arn      = aws_acm_certificate.cert.arn
     ssl_support_method       = "sni-only"
     minimum_protocol_version = "TLSv1.2_2021"
   }
