@@ -1,4 +1,4 @@
-resource "aws_acm_certificate" "cert" {
+resource "aws_acm_certificate" "resume" {
   domain_name       = "resume.aaronlangley.net"
   validation_method = "DNS"
 
