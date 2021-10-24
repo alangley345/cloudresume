@@ -6,8 +6,12 @@ resource "aws_cloudfront_distribution" "resumesite" {
   enabled             = true
   default_root_object = "index.html"
   
-  #depends_on = [aws_s3_bucket.site-bucket, aws_acm_certificate.cert]
+  depends_on = [aws_s3_bucket.site-bucket, aws_acm_certificate.resume]
   
+  aliases = ["resume.aaronlangley.net"]
+
+  comment = "Cloud Resume Challenge"
+
    lifecycle {
     prevent_destroy = true
   }
@@ -40,11 +44,17 @@ resource "aws_cloudfront_distribution" "resumesite" {
     #  origin_access_identity = aws_cloudfront_origin_access_identity.gitbook.cloudfront_access_identity_path
     #}
   }
+  
+  price_class = "PriceClass_100"
 
   restrictions {
     geo_restriction {
       restriction_type = "none"
     }
+  }
+  
+  tags = {
+    purpose = "cloudresumechallenge"
   }
 
   viewer_certificate {
