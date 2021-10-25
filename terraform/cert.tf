@@ -14,5 +14,6 @@ resource "aws_acm_certificate" "resume" {
 
 #validation
 resource aws_acm_certificate_validation "resume-validation" {
-  certificate_arn         = aws_acm_certificate.resume.arn
+  certificate_arn = aws_acm_certificate.resume.arn
+  validation_record_fqdns = [for record in aws_route53_record.resume : resume.aaronlangley.net]
 }
