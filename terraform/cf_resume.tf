@@ -55,3 +55,7 @@ resource "aws_cloudfront_distribution" "resume" {
     cloudfront_default_certificate = true
   }
 }
+
+output "domain_name" {
+  value = aws_cloudfront_distribution.resume.domain_name
+}
