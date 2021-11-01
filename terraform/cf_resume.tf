@@ -1,6 +1,6 @@
 resource "aws_cloudfront_distribution" "resume" {
   origin {
-    domain_name = "resume.aaronlangley.net.s3-website-us-east-1.amazonaws.com"
+    domain_name = "${aws_s3_bucket.resume.bucket_domain_name}"
     origin_id   = "mycloudresume"
     
   }
@@ -32,7 +32,7 @@ resource "aws_cloudfront_distribution" "resume" {
       }
     }
 
-    viewer_protocol_policy = "allow-all"
+    viewer_protocol_policy = "redirect to https"
     min_ttl                = 0
     default_ttl            = 3600
     max_ttl                = 86400
