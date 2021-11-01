@@ -1,6 +1,6 @@
 resource "aws_cloudfront_distribution" "resume" {
   origin {
-    domain_name = "resume.aaronlangley.net"
+    domain_name = "resume.aaronlangley.net.s3-website-us-east-1.amazonaws.com"
     origin_id   = "mycloudresume"
     
   }
@@ -17,7 +17,7 @@ resource "aws_cloudfront_distribution" "resume" {
   #}
   
 
-  aliases = ["mysite.example.com", "yoursite.example.com"]
+  aliases = ["resume.aaronlangley.net"]
 
   default_cache_behavior {
     allowed_methods  = ["DELETE", "GET", "HEAD", "OPTIONS", "PATCH", "POST", "PUT"]
