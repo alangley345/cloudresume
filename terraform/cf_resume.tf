@@ -1,9 +1,8 @@
 resource "aws_cloudfront_distribution" "resume" {
   origin {
-    domain_name = aws_s3_bucket.resume.bucket_regional_domain_name
-    origin_id   = local.s3_origin_id
-
-    #s3_origin_config {origin_access_identity = "origin-access-identity/cloudfront/ABCDEFG1234567"}
+    domain_name = aws_s3_bucket.resume.website_endpoint
+    origin_id   = "mycloudresume"
+    
   }
 
   enabled             = true
@@ -23,7 +22,7 @@ resource "aws_cloudfront_distribution" "resume" {
   default_cache_behavior {
     allowed_methods  = ["DELETE", "GET", "HEAD", "OPTIONS", "PATCH", "POST", "PUT"]
     cached_methods   = ["GET", "HEAD"]
-    target_origin_id = local.s3_origin_id
+    target_origin_id = "mycloudresume"
 
     forwarded_values {
       query_string = false
