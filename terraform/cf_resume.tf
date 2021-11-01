@@ -56,6 +56,6 @@ resource "aws_cloudfront_distribution" "resume" {
   }
 }
 
-output "domain_name" {
+output "cf_domain_name" {
   value = aws_cloudfront_distribution.resume.domain_name
 }
