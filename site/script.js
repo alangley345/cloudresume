@@ -3,5 +3,8 @@ update.open('GET', 'https://api.aaronlangley.net/updateVisitorCount/', true)
 update.setRequestHeader("Content-Type", "application/json");
 update.send()
 
-let count = "1";
-    document.getElementById("count").innerHTML = count;
+let visitCount = "1";
+document.getElementById("name").innerHTML = visitCount;
+
+
+  
