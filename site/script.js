@@ -6,5 +6,6 @@ update.send()
 let visitCount = "1";
 document.getElementById("name").innerHTML = visitCount;
 
-
-  
+function showCount() {
+    return "1"
+}
