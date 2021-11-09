@@ -8,5 +8,5 @@ update.send()
 function showCount() {
     let visitCount = "1";
     const id    = document.getElementById("visits");
-    id.value    = innerText.visitCount
+    id.write(visitCount)
 }
