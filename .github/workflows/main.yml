@@ -1,4 +1,4 @@
-name: Upload to S3
+name: Upload to resume.aaronlangley.net S3 bucket
 
 on:
   push:
