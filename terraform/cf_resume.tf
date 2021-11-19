@@ -53,7 +53,7 @@ resource "aws_cloudfront_distribution" "resume" {
   }
 
   viewer_certificate {
-    acm_certificate_arn      = var.cf_cert
+    acm_certificate_arn      = data.terraform_remote_state.base_state.outputs.wildcard_arn
     minimum_protocol_version = "TLSv1.2_2019"
     ssl_support_method       = "sni-only"
   }
