@@ -1,5 +1,5 @@
 resource "aws_route53_record" "resume" {
-  zone_id = var.rt53_zone
+  zone_id = data.terraform_remote_state.base_state.outputs.aaronlangley_zone_id
   name    = "resume.aaronlangley.net"
   type    = "A"
 
@@ -11,7 +11,7 @@ resource "aws_route53_record" "resume" {
 }
 
 resource "aws_route53_record" "resume_IPv6" {
-  zone_id = var.rt53_zone
+  zone_id = data.terraform_remote_state.base_state.outputs.aaronlangley_zone_id
   name    = "resume.aaronlangley.net"
   type    = "AAAA"
 
