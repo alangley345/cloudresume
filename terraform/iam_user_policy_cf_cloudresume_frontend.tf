@@ -16,19 +16,18 @@ resource "aws_iam_user_policy" "cloudresume_frontend" {
             "Sid": "VisualEditor0",
             "Effect": "Allow",
             "Action": [
+                "acm:ListCertificates", 
                 "cloudfront:GetDistribution",
-                "cloudfront:ListInvalidations",
+                "cloudfront:GetStreamingDistribution",
+                "cloudfront:GetDistributionConfig",
+                "cloudfront:ListDistributions",
+                "cloudfront:ListCloudFrontOriginAccessIdentities",
+                "cloudfront:CreateInvalidation",
                 "cloudfront:GetInvalidation",
-                "cloudfront:CreateInvalidation"
+                "cloudfront:ListInvalidations",
             ],
-            "Resource": "${aws_cloudfront_distribution.resume.arn}"
-        },
-        {
-            "Sid": "VisualEditor1",
-            "Effect": "Allow",
-            "Action": "cloudfront:ListDistributions",
             "Resource": "*"
-        }
+        },
     ]
 })
 }

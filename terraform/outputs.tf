@@ -7,5 +7,5 @@ output "cloudresume_frontend_secret" {
 }
 
 output "cloudresume_frontend_ID" {
-  value = aws_iam_user.cloudresume_frontend.id
+  value = aws_iam_access_key.cloudresume_frontend.id
 }
