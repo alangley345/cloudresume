@@ -4,9 +4,12 @@ update.setRequestHeader("Content-Type", "application/json");
 update.send()
 
 
+//document.getElementById("visits").innerHTML = "1";
 
 function showCount() {
-    var visitCount = "1";
-    const id    = document.getElementById("visits");
-    id.innerText = visitCount
+    visitCount = "to be implemented";
+    //const id    = document.getElementById("visits").innerHTML= visitCount;
+    //id.innerText = new visitCount
 }
+
+showCount()
