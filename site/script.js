@@ -1,6 +1,6 @@
 function updateCount() {
     var update = new XMLHttpRequest()
-    update.open('GET', 'https://api.aaronlangley.net/updateCount/', true)
+    update.open('GET', 'https://api.aaronlangley.net/updateCount', true)
     update.setRequestHeader("Content-Type", "application/json");
     update.send()
 }
@@ -9,7 +9,7 @@ function updateCount() {
 
 function getCount() {
     var get = new XMLHttpRequest()
-    get.open('GET', 'https://api.aaronlangley.net/getCount/', true)
+    get.open('GET', 'https://api.aaronlangley.net/getCount', true)
     get.setRequestHeader("Content-Type", "application/json");
     response = get.send()
     const obj = JSON.parse(response)
