@@ -11,8 +11,11 @@ function getCount() {
     var get = new XMLHttpRequest()
     get.open('GET', 'https://api.aaronlangley.net/getCount', true)
     get.setRequestHeader("Content-Type", "application/json");
-    return get.send();
+    get.send();
+    return get.responseXML
 }
 
 updateCount()
-visitCount = getCount()
+console.log(getCount())
+visitCount = 'testing'
+
