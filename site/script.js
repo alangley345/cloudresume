@@ -1,9 +1,11 @@
 async function getCount(url) {
     const response = await fetch(url);
     var data       = await response.json()
-    var visitCount = JSON.stringify(data.body.Item.visits)
-    return visitCount
+    var siteHits = JSON.stringify(data.body.Item.visits)
+    return siteHits
 }
 
 fetch('https://api.aaronlangley.net/updateCount');
-visitCount = new getCount('https://api.aaronlangley.net/getCount');
+getCount('https://api.aaronlangley.net/getCount');
+
+visitCount = siteHits
