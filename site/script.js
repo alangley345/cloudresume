@@ -1,7 +1,7 @@
 async function getCount(url) {
     const response = await fetch(url);
     var data       = await response.json()
-    console.log(data)
+    console.log(visits)
 }
 
 fetch('https://api.aaronlangley.net/updateCount');
