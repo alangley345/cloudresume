@@ -7,6 +7,6 @@ function getCount(url) {
 
 fetch('https://api.aaronlangley.net/updateCount');
 
-console.log(getCount('https://api.aaronlangley.net'));
+console.log(getCount('https://api.aaronlangley.net/getCount'));
 
 visitorCount = "1"
