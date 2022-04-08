@@ -1,9 +1,14 @@
-async function getCount(url) {
-    const response = await fetch(url);
-    var data       = await response.json()
-    return JSON.stringify(data.body.Item.visits)
+function getCount(url) {
+    response = fetch(url)
+    .then(response => response.json())
+    .then(data => response.JSON.stringify(data.body.Item.visit))
+    .then(
+        console.log(data)
+    )
 }
 
 fetch('https://api.aaronlangley.net/updateCount');
 
-var visitCount = getCount('https://api.aaronlangley.net/getCount')
+var visitCount = "Banana"
+
+getCount('https://api.aaronlangley.net/getCount')
