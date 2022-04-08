@@ -2,7 +2,7 @@ function getCount(url) {
     fetch(url)
         .then(response =>{response.json()})
         .then(data => {JSON.stringify(data.body.Item.visits)})
-    return fetch.resolve(data)
+    return fetch.resolve()
 }
 
 function visits() {
