@@ -10,5 +10,5 @@ function getCount(url) {
 fetch('https://api.aaronlangley.net/updateCount');
 getCount('https://api.aaronlangley.net/getCount');
 
-console.log(visits)
+console.log(visits);
 visitCount = "Banana"
