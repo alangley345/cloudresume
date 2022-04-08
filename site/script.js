@@ -9,6 +9,6 @@ function getCount(url) {
 
 fetch('https://api.aaronlangley.net/updateCount');
 
-var visitCount = "Banana"
+visitCount = "Banana"
 
 getCount('https://api.aaronlangley.net/getCount')
