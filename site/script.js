@@ -6,7 +6,7 @@ function getCount(url) {
 
 function visits() {
     let visitCount;
-    getCount('https://api.aaronlangley.net/getCount').then(data => { visitCount = JSON.parse(data)});
+    getCount('https://api.aaronlangley.net/getCount').then(data => { visitCount = String(data)});
     return visitCount;
 }
 fetch('https://api.aaronlangley.net/updateCount');
