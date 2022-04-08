@@ -11,5 +11,4 @@ function visits() {
 }
 fetch('https://api.aaronlangley.net/updateCount');
 
-const visitCount = new visits();
-visitCount = JSON.stringify(visitCount);
+const visitCount = JSON.stringify(visits());
