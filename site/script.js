@@ -1,7 +1,7 @@
 async function getCount(url) {
     const response = await fetch(url);
     var data       = await response.json()
-    visitCount = JSON.stringify(data.body.Item.visits)
+    var visitCount = JSON.stringify(data.body.Item.visits)
     return visitCount
 }
 
