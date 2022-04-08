@@ -4,6 +4,11 @@ function getCount(url) {
         .then(data => {return JSON.stringify(data.body.Item.visits)})
 }
 
+function visits() {
+    let visitCount;
+    getCount('https://api.aaronlangley.net/getCount').then(data => { visitCount = data});
+    return visitCount;
+}
 fetch('https://api.aaronlangley.net/updateCount');
 
-let visitCount = getCount('https://api.aaronlangley.net/getCount').then(data => { visitCount = data});
+visits()
