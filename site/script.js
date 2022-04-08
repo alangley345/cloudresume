@@ -5,10 +5,8 @@ function getCount(url) {
     return data
 }
 
-function visits() {
-    var visitCount = Promise.resolve(getCount('https://api.aaronlangley.net/getCount'));
-}
-
 fetch('https://api.aaronlangley.net/updateCount');
 
-visitCount = new visits();
+console.log(getCount('https://api.aaronlangley.net'));
+
+visitorCount = "1"
