@@ -5,10 +5,10 @@ function getCount(url) {
 }
 
 function visits() {
-    let visitCount;
+    var visitCount;
     getCount('https://api.aaronlangley.net/getCount').then(data => { return visitCount = String(data)});
 }
 
 fetch('https://api.aaronlangley.net/updateCount');
 
-var visitCount = new visits();
+visitCount = new visits();
