@@ -2,7 +2,7 @@ function getCount() {
     fetch('https://api.aaronlangley.net/getCount')
         .then(response => response.json())
         .then(result => {
-            let visitCount = Item.visits
+            let visitCount = visits
             console.log(visitCount)
         })
 }
