@@ -6,9 +6,9 @@ function getCount(url) {
 
 function visits() {
     let visitCount;
-    getCount('https://api.aaronlangley.net/getCount').then(data => { visitCount = String(data)});
-    return visitCount;
+    getCount('https://api.aaronlangley.net/getCount').then(data => { return visitCount = String(data)});
 }
+
 fetch('https://api.aaronlangley.net/updateCount');
 
-let visitCount = new visits();
+var visitCount = new visits();
