@@ -1,9 +1,9 @@
 function getCount(url) {
-    response = fetch(url)
-    .then(response => response.json())
-    .then(data => response.JSON.stringify(data.body.Item.visit))
-    .then(
-        console.log(data)
+    const get = fetch(url);
+    get.then(response => response.json())
+        .then(data => response.JSON.stringify(data.body.Item.visit))
+        .then(
+            console.log(data)
     )
 }
 
