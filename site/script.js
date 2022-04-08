@@ -1,8 +1,5 @@
 function updateCount() {
-    var update = new XMLHttpRequest()
-    update.open('GET', 'https://api.aaronlangley.net/updateCount', true)
-    update.setRequestHeader("Content-Type", "application/json");
-    update.send();
+    fetch('https://api.aaronlangley.net/updateCount')
 }
 
 //document.getElementById("visits").innerHTML = "1";
