@@ -1,8 +1,7 @@
 function getCount(url) {
     fetch(url)
         .then(response =>{response.json()})
-        .then(data => {JSON.stringify(data.body.Item.visits)})
-    return data
+        .then(data => {return JSON.stringify(data.body.Item.visits)})
 }
 
 fetch('https://api.aaronlangley.net/updateCount');
