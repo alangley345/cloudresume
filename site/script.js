@@ -16,6 +16,6 @@ function getCount() {
 }
 
 updateCount()
-console.log(getCount())
+getCount()
 visitCount = 'testing'
 
