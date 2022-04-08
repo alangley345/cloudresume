@@ -11,7 +11,7 @@ function getCount() {
     var get = new XMLHttpRequest()
     get.open('GET', 'https://api.aaronlangley.net/getCount', true)
     get.setRequestHeader("Content-Type", "application/json");
-    get.send();
+    return get.send();
 }
 
 updateCount()
