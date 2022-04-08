@@ -6,6 +6,6 @@ async function getCount(url) {
 }
 
 fetch('https://api.aaronlangley.net/updateCount');
-getCount('https://api.aaronlangley.net/getCount'))
+getCount('https://api.aaronlangley.net/getCount');
 
 visitCount = "10000"
