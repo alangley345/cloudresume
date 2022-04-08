@@ -7,8 +7,8 @@ function getCount(url) {
 function visits() {
     let visitCount;
     getCount('https://api.aaronlangley.net/getCount').then(data => { visitCount = data});
-    return JSON.stringify(visitCount);
+    return visitCount;
 }
 fetch('https://api.aaronlangley.net/updateCount');
 
-var visitCount = new visits() 
+var visitCount = new JSON.stringify(visits());
