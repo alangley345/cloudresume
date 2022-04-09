@@ -22,7 +22,7 @@ jobs:
       uses: hashicorp/terraform-github-actions/init@v0.4.0
       env:
         #GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        TF_ACTION_WORKING_DIR: 'terraform'
+        TF_ACTION_WORKING_DIR: './terraform'
         AWS_REGION: 'us-east-1'
         AWS_ACCESS_KEY_ID:  ${{ secrets.ACCESS_TOKEN }}
         AWS_SECRET_ACCESS_KEY:  ${{ secrets.SECRET_KEY }}
@@ -34,7 +34,7 @@ jobs:
       uses: hashicorp/terraform-github-actions/apply@v0.4.0
       env:
         #GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        TF_ACTION_WORKING_DIR: 'terraform'
+        TF_ACTION_WORKING_DIR: './terraform'
         AWS_REGION: 'us-east-1'
         AWS_ACCESS_KEY_ID:  ${{ secrets.ACCESS_TOKEN }}
         AWS_SECRET_ACCESS_KEY:  ${{ secrets.SECRET_KEY }}
