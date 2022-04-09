@@ -2,7 +2,7 @@ resource "aws_cloudfront_distribution" "resume" {
   origin {
     domain_name = data.terraform_remote_state.base_state.outputs.resume_aaronlangley_net_id
     origin_id   = "mycloudresume"
-    
+
   }
 
   enabled             = true
@@ -15,7 +15,7 @@ resource "aws_cloudfront_distribution" "resume" {
   # bucket          = "mylogs.s3.amazonaws.com"
   # prefix          = "myprefix"
   #}
-  
+
 
   aliases = ["resume.aaronlangley.net"]
 
@@ -43,7 +43,7 @@ resource "aws_cloudfront_distribution" "resume" {
   restrictions {
     geo_restriction {
       restriction_type = "none"
-   
+
     }
   }
 

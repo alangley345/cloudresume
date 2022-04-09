@@ -16,12 +16,18 @@ jobs:
     steps:
 
     - name: Checkout Repo
-      uses: actions/checkout@v1
+      uses: actions/checkout@master
+    
+    - name: Terraform fmt
+      id: fmt
+      run: terraform fmt -check
+      continue-on-error: true
+
 
     - name: Terraform Init
       uses: hashicorp/terraform-github-actions/init@v0.4.0
       env:
-        #GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         TF_ACTION_WORKING_DIR: './terraform'
         AWS_REGION: 'us-east-1'
         AWS_ACCESS_KEY_ID:  ${{ secrets.ACCESS_TOKEN }}
@@ -33,7 +39,7 @@ jobs:
     - name: Terraform Apply
       uses: hashicorp/terraform-github-actions/apply@v0.4.0
       env:
-        #GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         TF_ACTION_WORKING_DIR: './terraform'
         AWS_REGION: 'us-east-1'
         AWS_ACCESS_KEY_ID:  ${{ secrets.ACCESS_TOKEN }}
