@@ -1,46 +1,43 @@
-name: Deploy Cloud Resume Frontend Infrastructure using Terraform
+name: Deploy
 
 on:
   push:
     paths:
       - '**.tf'
       - '**.tfvars'
-    branches:
-      - master
   workflow_dispatch:
 
 jobs:
-  tf_fmt:
-    name: Deploy Cloud Resume Frontend
+  Terraform:
+    name: Terraform Apply
     runs-on: ubuntu-latest
     steps:
 
     - name: Checkout Repo
       uses: actions/checkout@master
     
-    - name: Terraform fmt
-      id: fmt
-      run: terraform fmt -check
-      continue-on-error: true
-
+    - name: Terraform Setup
+      uses: hashicorp/setup-terraform@v1
 
     - name: Terraform Init
-      uses: hashicorp/terraform-github-actions/init@v0.4.0
+      run: terraform init
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         TF_ACTION_WORKING_DIR: './terraform'
         AWS_REGION: 'us-east-1'
         AWS_ACCESS_KEY_ID:  ${{ secrets.ACCESS_TOKEN }}
         AWS_SECRET_ACCESS_KEY:  ${{ secrets.SECRET_KEY }}
+        #TF_CLI_ARGS: '-var-file="env/dev.tfvars" -backend-config="bucket=${{ secrets.STATE_BUCKET_DEV }}" '
 
     - name: Terraform Validate
-      uses: hashicorp/terraform-github-actions/validate@v0.3.7
+      run: terraform validate 
 
     - name: Terraform Apply
-      uses: hashicorp/terraform-github-actions/apply@v0.4.0
+      run: terraform apply -auto-approve
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         TF_ACTION_WORKING_DIR: './terraform'
         AWS_REGION: 'us-east-1'
         AWS_ACCESS_KEY_ID:  ${{ secrets.ACCESS_TOKEN }}
         AWS_SECRET_ACCESS_KEY:  ${{ secrets.SECRET_KEY }}
+        #TF_CLI_ARGS: '-var-file="env/dev.tfvars"'
