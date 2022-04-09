@@ -1,11 +1,11 @@
 function getCount(url) {
     fetch(url)
         .then(response =>response.json())
-        .then(data => data.body.Item.visits)
-    return console.log(JSON.stringify(data))
+        .then(data => JSON.stringify(data.body.Item.visits))
+        .then(document.getElementById("visits").innerHTML=data)
+    r
 }
 
 fetch('https://api.aaronlangley.net/updateCount');
 getCount('https://api.aaronlangley.net/getCount');
 
-var visitCount = "1"
