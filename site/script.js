@@ -2,8 +2,8 @@ function getCount(url) {
     fetch(url)
         .then(response =>response.json())
         .then(data => {
-            var vistitCount = JSON.stringify(data.body.Item.visits)
-            document.getElementById("visits").innerHTML=vistitCount
+            var visitCount = JSON.stringify(data.body.Item.visits)
+            document.getElementById("visits").innerHTML=visitCount
         })
 }
 

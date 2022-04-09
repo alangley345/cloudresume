@@ -1,5 +1,5 @@
 resource "aws_s3_bucket_policy" "resume" {
-  bucket = aws_s3_bucket.resume.id
+  bucket = data.terraform_remote_state.base_state.outputs.resume_aaronlangley_net_id
   policy = jsonencode({
 
        "Version": "2012-10-17",
@@ -24,6 +24,6 @@ resource "aws_s3_bucket_policy" "resume" {
 
   })
 
-  depends_on = [aws_s3_bucket.resume]
+  #depends_on = [data.terraform_remote_state.base_state.s3.aws_s3_bucket.resume]
    
 }
