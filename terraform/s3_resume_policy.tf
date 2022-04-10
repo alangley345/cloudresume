@@ -9,7 +9,7 @@ resource "aws_s3_bucket_policy" "resume" {
         "Effect" : "Allow",
         "Principal" : "*",
         "Action" : "s3:GetObject",
-        "Resource" : "${aws_cloudfront_origin_access_identity.resume.iam_arn}"
+        "Resource" : "${aws_cloudfront_origin_access_identity.resume.arn}"
       },
       {
         "Sid" : "2",
