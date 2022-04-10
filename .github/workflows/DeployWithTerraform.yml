@@ -13,7 +13,7 @@ jobs:
     steps:
 
     - name: Checkout Repo
-      uses: actions/checkout@v3
+      uses: actions/checkout@master
     
     - name: Terraform Setup
       uses: hashicorp/setup-terraform@v1
@@ -22,7 +22,7 @@ jobs:
       run: terraform init
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        TF_ACTION_WORKING_DIR: 'terraform'
+        TF_ACTION_WORKING_DIR: 'terraform/'
         AWS_ACCESS_KEY_ID:  ${{ secrets.ACCESS_TOKEN }}
         AWS_SECRET_ACCESS_KEY:  ${{ secrets.SECRET_KEY }}
 
@@ -33,6 +33,6 @@ jobs:
       run: terraform apply -auto-approve
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        TF_ACTION_WORKING_DIR: 'terraform'
+        TF_ACTION_WORKING_DIR: 'terraform/'
         AWS_ACCESS_KEY_ID:  ${{ secrets.ACCESS_TOKEN }}
         AWS_SECRET_ACCESS_KEY:  ${{ secrets.SECRET_KEY }}
