@@ -3,6 +3,10 @@ provider "aws" {
   region = "us-east-1"
 }
 
+provider "github" {
+  token = GITHUB_TOKEN
+}
+
 #define location of state file
 terraform {
   backend "s3" {
