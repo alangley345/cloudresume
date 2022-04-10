@@ -1,5 +1,5 @@
 resource "aws_s3_bucket_policy" "resume" {
-  bucket = aws_s3_bucket.resume
+  bucket = aws_s3_bucket.resume.id
   policy = jsonencode({
 
     "Version" : "2012-10-17",
@@ -9,21 +9,21 @@ resource "aws_s3_bucket_policy" "resume" {
         "Effect" : "Allow",
         "Principal" : "*",
         "Action" : "s3:GetObject",
-        "Resource" : "arn:aws:s3:::resume.aaronlangley.net/*"
+        "Resource" : "${aws_s3_bucket.resume.arn}/*"
       },
       {
         "Sid" : "2",
         "Effect" : "Allow",
         "Principal" : {
-          "AWS" : "arn:aws:iam::cloudfront:user/CloudFront Origin Access Identity EH8JBVD3PCCAH"
+          "AWS" : "${aws_cloudfront_distribution.id}"
         },
         "Action" : "s3:GetObject",
-        "Resource" : "arn:aws:s3:::resume.aaronlangley.net/*"
+        "Resource" : "${aws_s3_bucket.resume.arn}/*"
       }
     ]
 
   })
 
-  #depends_on = [data.terraform_remote_state.base_state.s3.aws_s3_bucket.resume]
+  depends_on = [aws_s3_bucket.resume, aws_cloudfront_distribution.resume]
 
 }

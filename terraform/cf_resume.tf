@@ -1,6 +1,6 @@
 resource "aws_cloudfront_distribution" "resume" {
   origin {
-    domain_name = data.terraform_remote_state.base_state.outputs.resume_aaronlangley_net_id
+    domain_name = aws.aws_s3_bucket.resume.id
     origin_id   = "mycloudresume"
 
   }
