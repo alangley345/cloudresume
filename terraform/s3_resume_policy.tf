@@ -1,5 +1,5 @@
 resource "aws_s3_bucket_policy" "resume" {
-  bucket = data.terraform_remote_state.base_state.outputs.resume_aaronlangley_net_id
+  bucket = aws_s3_bucket.resume
   policy = jsonencode({
 
     "Version" : "2012-10-17",
