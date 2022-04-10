@@ -1,6 +1,6 @@
 resource "aws_cloudfront_distribution" "resume" {
   origin {
-    domain_name = aws_s3_bucket.resume.domain_name
+    domain_name = aws_s3_bucket.resume.bucket_domain_name
     origin_id   = "mycloudresume"
 
   }
