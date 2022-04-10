@@ -1,6 +1,6 @@
 resource "aws_s3_bucket" "resume" {
   bucket = "resume.aaronlangley.net"
-  acl    = "public-read"
+  acl    = "private"
   
   cors_rule {
     allowed_headers = ["*"]

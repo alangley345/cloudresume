@@ -3,6 +3,10 @@ resource "aws_cloudfront_distribution" "resume" {
     domain_name = aws_s3_bucket.resume.bucket_domain_name
     origin_id   = "mycloudresume"
 
+    s3_origin_config {
+      origin_access_identity = "${aws_cloudfront_origin_access_identity.resume}"
+    }
+
   }
 
   enabled             = true
