@@ -15,7 +15,7 @@ resource "aws_s3_bucket_policy" "resume" {
         "Sid" : "2",
         "Effect" : "Allow",
         "Principal" : {
-          "AWS" : "${aws_cloudfront_distribution.id}"
+          "AWS" : "${aws_cloudfront_distribution.resume.id}"
         },
         "Action" : "s3:GetObject",
         "Resource" : "${aws_s3_bucket.resume.arn}/*"
