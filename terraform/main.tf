@@ -4,7 +4,8 @@ provider "aws" {
 }
 
 provider "github" {
-  # Configuration options
+  token = GITHUB_TOKEN
+  owner = alangley345
 }
 
 
