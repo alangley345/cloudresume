@@ -4,7 +4,7 @@ resource "aws_cloudfront_distribution" "resume" {
     origin_id   = "mycloudresume"
 
     s3_origin_config {
-      origin_access_identity = aws_cloudfront_origin_access_identity.resume.aws_cloudfront_origin_access_identity
+      origin_access_identity = aws_cloudfront_origin_access_identity.resume.aws_cloudfront_access_identity_path
     }
 
   }
