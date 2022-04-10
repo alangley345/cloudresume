@@ -58,3 +58,7 @@ resource "aws_cloudfront_distribution" "resume" {
     ssl_support_method       = "sni-only"
   }
 }
+
+resource "aws_cloudfront_origin_access_identity" "resume" {
+  comment = "Used for accessing resume.aaronlangley.net"
+}
