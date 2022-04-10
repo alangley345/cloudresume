@@ -4,7 +4,6 @@ provider "aws" {
 }
 
 provider "github" {
-  token = GITHUB_TOKEN
 }
 
 #define location of state file
