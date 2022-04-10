@@ -2,6 +2,8 @@ name: Deploy
 
 on:
   push:
+    paths:
+      - '**.tf'
     branches:
       - main
   
