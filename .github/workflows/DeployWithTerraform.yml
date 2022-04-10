@@ -21,6 +21,7 @@ jobs:
     - name: Terraform Init
       run: |
         cd terraform/
+        export GITHUB_TOKEN=$GITHUB_TOKEN
         terraform init
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -33,6 +34,7 @@ jobs:
     - name: Terraform Apply
       run: |
         cd terraform/
+        export GITHUB_TOKEN=$GITHUB_TOKEN
         terraform apply -auto-approve
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
