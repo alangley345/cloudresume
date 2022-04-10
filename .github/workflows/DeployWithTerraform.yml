@@ -19,7 +19,9 @@ jobs:
       uses: hashicorp/setup-terraform@v1
 
     - name: Terraform Init
-      run: terraform init
+      run: |
+        cd terraform/
+        terraform init
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         #TF_ACTION_WORKING_DIR: 'terraform/'
@@ -30,7 +32,9 @@ jobs:
       run: terraform validate 
 
     - name: Terraform Apply
-      run: terraform apply -auto-approve
+      run: |
+        cd terraform/
+        terraform apply -auto-approve
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         #TF_ACTION_WORKING_DIR: 'terraform/'
