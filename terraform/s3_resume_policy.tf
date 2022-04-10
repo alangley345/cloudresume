@@ -9,13 +9,13 @@ resource "aws_s3_bucket_policy" "resume" {
         "Effect" : "Allow",
         "Principal" : "*",
         "Action" : "s3:GetObject",
-        "Resource" : "${aws_cloudfront_origin_access_identity.resume.iam_arn}"
+        "Resource" : "${aws_s3_bucket.resume.arn}/*"
       },
       {
         "Sid" : "2",
         "Effect" : "Allow",
         "Principal" : {
-          "AWS" : "${aws_cloudfront_distribution.resume.id}"
+          "AWS" : "${aws_cloudfront_origin_access_identity.resume.iam_arn}"
         },
         "Action" : "s3:GetObject",
         "Resource" : "${aws_s3_bucket.resume.arn}/*"
@@ -24,6 +24,6 @@ resource "aws_s3_bucket_policy" "resume" {
 
   })
 
-  depends_on = [aws_s3_bucket.resume, aws_cloudfront_distribution.resume]
+  depends_on = [aws_s3_bucket.resume, aws_cloudfront_origin_access_identity.resume]
 
 }
