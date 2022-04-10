@@ -58,7 +58,3 @@ resource "aws_cloudfront_distribution" "resume" {
     ssl_support_method       = "sni-only"
   }
 }
-
-output "cloudfront_domain_name" {
-  value = aws_cloudfront_distribution.resume.domain_name
-}
