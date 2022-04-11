@@ -1,4 +1,4 @@
-name: Upload to resume.aaronlangley.net S3 bucket
+name: Push Secrets to Repo 
 
 on:
   workflow_dispatch:
@@ -12,5 +12,4 @@ jobs:
         env:
           github_token: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          sudo apt-get install -y pip
           pip install -y nacl
