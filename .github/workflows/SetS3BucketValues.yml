@@ -12,5 +12,5 @@ jobs:
         env:
           github_token: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          sudo apt install -y pip3
+          sudo apt-get install -y pip
           pip install -y nacl
