@@ -1,6 +1,8 @@
 name: Function Testing
     
-on: push
+on: 
+  push:
+  
   workflow_run:
     workflows: 
       -Deploy with Terraform
