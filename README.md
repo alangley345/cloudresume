@@ -1,4 +1,4 @@
-# cloudresume-frontend
+# Cloudresume Resume Challenge
 Front end resources for cloud resume challenge.
 
 Read original challenge here:
@@ -6,6 +6,6 @@ https://cloudresumechallenge.dev/docs/the-challenge/aws/
 
 
 Local resources requried to deploy this:
-AWS CLI with valid access token
-Terraform
-Bitwarden CLI
+AWS Access Token for User with Full Permissions.
+Terraform (not necessary but nice for planning and linting locally if needed).
+Github secrets update with access token for user above.
