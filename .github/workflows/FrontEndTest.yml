@@ -15,9 +15,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Endpoint Testing
-      - uses: actions/checkout@v1
         shell: bash
         run: |
           chmod +x ./scripts/resumeFunctionTest.sh
-          bash ./scripts/resumeFunctionTest.sh
+          ./scripts/resumeFunctionTest.sh
       
