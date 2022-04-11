@@ -12,7 +12,7 @@ jobs:
         env:
           github_token: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          pip install nacl
+          pip install pynacl
       
      
       - name: Execute setBucketSecrets.py
