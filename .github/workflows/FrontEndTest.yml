@@ -2,7 +2,9 @@ name: Function Testing
     
 on: push
   workflow_run:
-    workflows: ["Deploy with Terraform","Upload to resume.aaronlangley.net S3 bucket"]
+    workflows: 
+      -Deploy with Terraform
+      -Upload to resume.aaronlangley.net S3 bucket
     type:
       - complete
 
