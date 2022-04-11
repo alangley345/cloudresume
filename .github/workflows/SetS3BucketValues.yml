@@ -7,6 +7,9 @@ jobs:
   upload:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+
       - name: Install pip and nacl
         shell: bash
         env:
@@ -16,5 +19,6 @@ jobs:
       
      
       - name: Execute setBucketSecrets.py
+        working-directory: scripts/
         run: |
-          python /scripts/setBucketSecrets.py
+          python setBucketSecrets.py
