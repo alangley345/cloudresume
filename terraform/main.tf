@@ -6,7 +6,7 @@ provider "aws" {
 terraform {
   backend "s3" {
     bucket = "myterraformcode"
-    key    = "prod/cloudresume.tf"
+    key    = "prod/cloudresume.tfstate"
     region = "us-east-1"
   }
 
