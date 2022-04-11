@@ -17,6 +17,6 @@ jobs:
       - name: Endpoint Testing
         shell: bash
         run: |
-          chmod +x ./scripts/resumeFunctionTest.sh
+          chmod +x /scripts/resumeFunctionTest.sh
           ./scripts/resumeFunctionTest.sh
       
