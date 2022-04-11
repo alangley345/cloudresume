@@ -14,10 +14,12 @@ jobs:
   run:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+
       - name: Endpoint Testing
         shell: bash
         run: |
-          cd scripts
-          chmod +x resumeFunctionTest.sh
-          ./resumeFunctionTest.sh
+          chmod +x /scripts/resumeFunctionTest.sh
+          ./scripts/resumeFunctionTest.sh
       
