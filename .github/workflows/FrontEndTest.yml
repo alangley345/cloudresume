@@ -18,8 +18,8 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Endpoint Testing
+        working-directory: scripts/
         shell: bash
         run: |
-          chmod +x /scripts/resumeFunctionTest.sh
-          ./scripts/resumeFunctionTest.sh
+          bash resumeFunctionTest.sh
       

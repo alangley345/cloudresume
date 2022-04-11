@@ -1,7 +1,11 @@
-output "cloudfront_resume_distributionID" {
-  value = aws_cloudfront_distribution.resume.id
+output "cloudresume_backend_secret" {
+    value       = aws_iam_access_key.cloudresume_backend.secret
+    description = "AWS Access Token Secret"
+    sensitive = true
+    
 }
 
-output "cloudfront_domain_name" {
-  value = aws_cloudfront_distribution.resume.domain_name
+output "cloudresume_backend_ID" {
+    value       = aws_iam_access_key.cloudresume_backend.id
+    description = "AWS Access Token ID"
 }
