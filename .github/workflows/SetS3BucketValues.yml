@@ -1,0 +1,16 @@
+name: Upload to resume.aaronlangley.net S3 bucket
+
+on:
+  workflow_dispatch:
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install pip and nacl
+        shell: bash
+        env:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          sudo apt install -y pip3
+          pip install -y nacl
