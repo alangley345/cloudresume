@@ -1,6 +1,7 @@
 from base64 import b64encode
 from nacl import encoding, public
 import requests
+import os
 
 def encrypt(public_key: str, secret_value: str) -> str:
   """Encrypt a Unicode string using the public key."""
@@ -12,6 +13,9 @@ def encrypt(public_key: str, secret_value: str) -> str:
 
 owner = "alangley345"
 repo  = "cloudresume"
-pubKey = requests.get('https://api.github.com/repos/%s/%s/actions/secrets/public-key' % owner % repo, auth=('user', 'pass'))
+url   =  f"https://api.github.com/repos/{owner}/{repo}/actions/secrets/public-key"
+token = os.environ.get('GITHUB_TOKEN')
+
+pubKey = requests.get(url)
 
 print(pubKey)
