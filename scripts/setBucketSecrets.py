@@ -22,11 +22,12 @@ token = os.environ.get('GITHUB_TOKEN')
 #get public key
 response = requests.get(get_url , headers={'Authorization': f'token {token}'})
 response = response.json()
-pubKey   = response.get('key_id')
+pubKey   = response.get('key')
+pubKeyID = response.get('key_id')
 
 #put secret
-encrypt(pubKey , "resume.aaronlangley.net" )
-putBucket = requests.put(get_url , headers={'Authorization': f'token {token}'})
+newSecret = encrypt(pubKey , "resume.aaronlangley.net" )
 
+putBucket = requests.put(get_url , headers={'Authorization': f'token {token}'}, data={"encrypted_value": newSecret,"key_id": str(pubKeyID)})
 
-print(pubKey)
+print(newSecret)
