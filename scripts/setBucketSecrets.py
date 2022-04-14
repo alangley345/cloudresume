@@ -2,6 +2,7 @@ from base64 import b64encode
 from nacl import encoding, public
 import requests
 import os
+import json
 
 #from Github API docs
 def encrypt(public_key: str, secret_value: str) -> str:
@@ -28,6 +29,7 @@ pubKeyID = response.get('key_id')
 #put secret
 newSecret = encrypt(pubKey , "resume.aaronlangley.net" )
 
-putBucket = requests.put(get_url , headers={'Authorization': f'token {token}'}, data={"encrypted_value": newSecret,"key_id": str(pubKeyID)})
+putBucket = requests.put(get_url , headers={'Authorization': f'token {token}'}, data={"key_id": json.dumps(pubKeyID), "encrypted_value": json.dumps(newSecret)})
 
-print(newSecret)
+print(pubKeyID)
+print(json.dumps(newSecret))
