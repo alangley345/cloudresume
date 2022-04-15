@@ -15,21 +15,27 @@ def encrypt(public_key: str, secret_value: str) -> str:
 #request variables
 owner = "alangley345"
 repo  = "cloudresume"
-bucketName = "BUCKET_NAME"
-get_url   =  f"https://api.github.com/repos/{owner}/{repo}/actions/secrets/public-key"
-put_url   =  f"https://api.github.com/repos/{owner}/{repo}/actions/secrets/{bucketName}"
+secretName = "BUCKET_NAME"
+get_url   =  f'https://api.github.com/repos/{owner}/{repo}/actions/secrets/public-key'
+put_url   =  f'https://api.github.com/repos/{owner}/{repo}/actions/secrets/{secretName}'
+bucket='resume.aaronlangley.net'
 token = os.environ.get('GITHUB_TOKEN')
 
 #get public key
-response = requests.get(get_url , headers={'Authorization': f'token {token}'})
+response = requests.get(get_url , headers={'Authorization': f'token {token}','Accept': 'application/vnd.github.v3+json'})
 response = response.json()
 pubKey   = response.get('key')
 pubKeyID = response.get('key_id')
+newSecret = encrypt(pubKey, f"{bucket}")
 
-#put secret
-newSecret = encrypt(pubKey , "resume.aaronlangley.net" )
 
-putBucket = requests.put(get_url , headers={'Authorization': f'token {token}'}, data={"key_id": json.dumps(pubKeyID), "encrypted_value": json.dumps(newSecret)})
+putBucket = requests.put(put_url, headers={'Authorization': f'token {token}','Accept': 'application/vnd.github.v3+json'}
+  ,data={'key_id': json.dumps(pubKeyID), 'encrypted_value': json.dumps(newSecret)})
 
+#debug
+print(pubKey)
 print(pubKeyID)
-print(json.dumps(newSecret))
+print(put_url)
+print(putBucket.json())
+print(newSecret)
+print(bucket)
