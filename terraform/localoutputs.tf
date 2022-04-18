@@ -1,5 +1,5 @@
 resource "local_file" "bucket_name" {
-    content  = aws_s3_bucket.resume.bucket_name
+    content  = aws_s3_bucket.resume.id
     filename = "s3bucketname.txt"
 }
 
