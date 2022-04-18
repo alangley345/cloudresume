@@ -20,7 +20,7 @@ get_url    = f'https://api.github.com/repos/{owner}/{repo}/actions/secrets/publi
 put_url    = f'https://api.github.com/repos/{owner}/{repo}/actions/secrets/{secretName}'
 bucket     = 'resume.aaronlangley.net'
 token      = os.environ.get('GITHUB_TOKEN')
-header     = {'Authorization':f'token {token}','Accept':'application/vnd.github.v3+json'}
+header     = {"Authorization":f"token {token}","Accept":"application/vnd.github.v3+json"}
 
 #get public key
 response = requests.get(get_url,headers=header)
@@ -29,10 +29,11 @@ pubKey   = response.get('key')
 pubKeyID = response.get('key_id')
 newSecret = encrypt(pubKey,bucket)
 
-payload = {'encrypted_value':newSecret,'key_id':pubKeyID}
+payload = {"encrypted_value":f"{newSecret}","key_id":f"{pubKeyID}"}
 putBucket = requests.put(put_url,headers=header,data=payload)
 
 #debug
 print(response)
 print(payload)
 print(putBucket.json())
+#print(put_url)
