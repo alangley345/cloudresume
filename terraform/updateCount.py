@@ -10,7 +10,7 @@ def lambda_handler(event, context):
         return {
             'statuscode': 200,
             'headers': {
-                    'Access-Control-Allow-Origin': '*',
+                    'Access-Control-Allow-Origin': 'https://resume.aaronlangley.net',
             },
             'body':
                 
