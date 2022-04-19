@@ -2,8 +2,6 @@ name: Deploy with Terraform
 
 on:
   push:
-    paths:
-      - '**.tf'
     branches:
       - main
   
