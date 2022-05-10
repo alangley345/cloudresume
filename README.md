@@ -1,5 +1,5 @@
 # Cloudresume Resume Challenge
-Front end resources for cloud resume challenge.
+Resources for cloud resume challenge.
 
 Read original challenge here:
 https://cloudresumechallenge.dev/docs/the-challenge/aws/
