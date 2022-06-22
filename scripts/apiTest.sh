@@ -10,9 +10,9 @@ if [[ $request1 > $request ]]
             aws dynamodb update-item \
             --table-name resume.aaronlangley.net \
             --key {\"event\":{\"S\":\"test\"}} \
-            --update-expression "set visits = visits - :inc" \
+            --update-expression "set visits = visits - 1" \
             --expression-attribute-names {\"N\":\"Visits\"} \
-            --expression-attribute-values {\":inc\":\"1\"}
+            #--expression-attribute-values {\":inc\":\"1\"}
         else
             echo 'Check your APIs again'
 fi
