@@ -15,7 +15,7 @@ jobs:
       working-directory: /
       shell: bash
       run: |
-        bash ./scripts/makeZip.sh
+        bash /scripts/makeZip.sh
 
     - name: GIT commit and push all changed files
       env: 
