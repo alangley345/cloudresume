@@ -6,6 +6,9 @@ on:
       - '**.js'
       - '**.css'
       - '**.html'
+      - '**.png'
+      - '**.ico'
+      - '**.webmanifest' 
   workflow_dispatch:
 
 jobs:
