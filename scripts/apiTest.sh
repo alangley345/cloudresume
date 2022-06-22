@@ -17,7 +17,3 @@ if [[ $request2 > $request1 ]]
         else
             echo 'Check your APIs again'
 fi
-
-#--update-expression 'SET #H = :h' \
-#--expression-attribute-names '{"#H":"Column_name_to_change"}' \
-#--expression-attribute-values '{":h":{"S":"Changed_Column_value"}}'
