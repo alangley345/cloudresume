@@ -4,7 +4,7 @@ request1=$(curl https://api.aaronlangley.net/getCount | jq '.body.Item.visits')
 curl https://api.aaronlangley.net/updateCount
 request2=$(curl https://api.aaronlangley.net/getCount | jq '.body.Item.visits')
 
-if [[ $request1 > $request ]]
+if [[ $request1 > $request2 ]]
         then
             echo 'Cloudresume APIs are working'
             aws dynamodb update-item \
