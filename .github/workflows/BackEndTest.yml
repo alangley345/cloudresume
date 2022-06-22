@@ -1,0 +1,28 @@
+name: Backend Function Testing
+
+on: 
+  push:
+  
+  workflow_run:
+    workflows: 
+      -Deploy with Terraform
+    type:
+      - complete
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@main
+      - name: Test API calls
+        working-directory: scripts/
+        shell: bash
+        env:
+          access_key: ${{ secrets.ACCESS_TOKEN }}
+          secret_key: ${{ secrets.SECRET_KEY }}
+        run: |
+          aws configure set aws_access_key_id $access_key
+          aws configure set aws_secret_access_key $secret_key 
+          aws configure set default.region us-east-2
+          bash apiTest.sh
+         
