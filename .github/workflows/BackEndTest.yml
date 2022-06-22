@@ -8,6 +8,7 @@ on:
       -Deploy with Terraform
     type:
       - complete
+  workflow_dispatch:
 
 jobs:
   upload:
