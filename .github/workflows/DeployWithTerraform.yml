@@ -15,6 +15,12 @@ jobs:
     - name: Checkout Repo
       uses: actions/checkout@v2
     
+    - name: Test API calls
+      working-directory: scripts/
+      shell: bash
+      run: |
+          bash makeZip.sh
+          
     - name: Terraform Setup
       uses: hashicorp/setup-terraform@v1
 
