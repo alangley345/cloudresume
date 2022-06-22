@@ -26,7 +26,7 @@ jobs:
         run: |
           aws configure set aws_access_key_id $access_key
           aws configure set aws_secret_access_key $secret_key 
-          aws configure set default.region us-east-2
+          aws configure set default.region us-east-1
           aws s3 sync --delete ./site/ s3://$s3_bucket/
           sleep 5
           aws cloudfront create-invalidation --distribution-id $distribution_ID --paths "/*"
