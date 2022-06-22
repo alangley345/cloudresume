@@ -10,9 +10,10 @@ jobs:
     name: Create zips and add them to repo
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@main
     
     - name: Make Lambda Zips
-      working-directory: ./scripts
+      working-directory: scripts
       shell: bash
       run: |
         bash makeZip.sh
