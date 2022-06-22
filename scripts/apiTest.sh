@@ -9,7 +9,7 @@ if [[ $request1 > $request ]]
             echo 'Cloudresume APIs are working'
             aws dynamodb update-item \
             --table-name resume.aaronlangley.net \
-            --key \"{\"event\": \"test\"}\"}\" \
+            --key \"{\"event\":\"test\"}\"}\" \
             --update-expression "set visits = visits - :inc" \
             --expression-attribute-names \"{\"N\":\"Visits\"}\"
             --expression-attribute-values \"{\":inc\":1}\"
