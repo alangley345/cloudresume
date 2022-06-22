@@ -1,6 +1,8 @@
 # Cloudresume Resume Challenge
 Resources for cloud resume challenge.
 
+![Application Diagram](https://github.com/alangley345/cloudresumechallenge/](https://github.com/alangley345/cloudresume/blob/main/Cloud%20Resume%20Challenge.png)
+
 Read original challenge here:
 https://cloudresumechallenge.dev/docs/the-challenge/aws/
 
