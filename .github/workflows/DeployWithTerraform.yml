@@ -12,10 +12,10 @@ jobs:
     steps:
     
     - name: Make Lambda Zips
-      working-directory: /
+      working-directory: /scripts
       shell: bash
       run: |
-        bash /scripts/makeZip.sh
+        bash makeZip.sh
 
     - name: GIT commit and push all changed files
       env: 
