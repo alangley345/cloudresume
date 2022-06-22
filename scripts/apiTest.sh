@@ -11,7 +11,7 @@ if [[ $request1 > $request ]]
             --table-name resume.aaronlangley.net \
             --key {\"event\":{\"S\":\"test\"}} \
             --update-expression "set visits = visits + :inc" \
-            --expression-attribute-values {\":inc\":{\"N\":\"-1\"}}
+            --expression-attribute-values {\":inc\":{\"N\":\"-1\"}} \
             --expression-attribute-names {\"visits\":\"visits\"} \
             
         else
