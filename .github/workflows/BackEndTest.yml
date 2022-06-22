@@ -2,10 +2,9 @@ name: Backend Function Testing
 
 on: 
   push:
-  
   workflow_run:
     workflows: 
-      -Deploy with Terraform
+      - Deploy with Terraform
     type:
       - complete
   workflow_dispatch:
