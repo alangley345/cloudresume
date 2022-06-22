@@ -1,15 +1,15 @@
 #!/bin/bash
 
-if [[ -f "../terraform/updateCount.py" ]]
+if [[ -f "./updateCount.py" ]]
 then
-        zip ../terraform/updateCount.zip ../terraform/updateCount.py
+        zip ../terraform/updateCount.zip updateCount.py
 else
     echo "Missing updateCount.py"
 fi
 
-if [[ -f "../terraform/getCount.py" ]]
+if [[ -f "./getCount.py" ]]
 then
-        zip ../terraform/getCount.zip ../terraform/getCount.py
+        zip ../terraform/getCount.zip getCount.py
 else
     echo "Missing getCount.py"
 fi
