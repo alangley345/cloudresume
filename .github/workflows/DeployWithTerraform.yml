@@ -12,7 +12,7 @@ jobs:
     steps:
     
     - name: Make Lambda Zips
-      working-directory: /scripts
+      working-directory: ./scripts
       shell: bash
       run: |
         bash makeZip.sh
