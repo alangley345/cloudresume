@@ -11,7 +11,7 @@ if [[ $request1 > $request ]]
             --table-name resume.aaronlangley.net \
             --key {\"event\":{\"S\":\"test\"}} \
             --update-expression "set visits = visits - :inc" \
-            --expression-attribute-names {\"S\":\"visits\"} \
+            #--expression-attribute-names {\"S\":\"visits\"} \
             --expression-attribute-values {\":inc\":\"1\"}
         else
             echo 'Check your APIs again'
