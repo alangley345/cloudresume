@@ -12,7 +12,7 @@ if [[ $request1 > $request ]]
             --key {\"event\":{\"S\":\"test\"}} \
             --update-expression "set visits = visits + :inc" \
             --expression-attribute-values {\":inc\":{\"N\":\"-1\"}}
-            #--expression-attribute-names {\"S\":\"visits\"} \
+            --expression-attribute-names {\"visits\":\"visits\"} \
             
         else
             echo 'Check your APIs again'
