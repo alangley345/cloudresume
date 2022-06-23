@@ -18,7 +18,7 @@ def lambda_handler(event, context):
                 
                 table.get_item(
                 Key={
-                        'event': 'test',
+                        'event': 'prod',
                 },
                 ConsistentRead=False,
                 ProjectionExpression= 'visits',

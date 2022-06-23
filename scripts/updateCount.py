@@ -18,7 +18,7 @@ def lambda_handler(event, context):
                 
                 table.update_item(
                 Key={
-                        'event': 'test',
+                        'event': 'prod',
                 },
                 UpdateExpression= 'set visits = visits + :inc',
                 ExpressionAttributeValues={
