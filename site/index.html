@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <head>
-
-  <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="application/octet-stream"></script>
   <script src="script.js"></script>
   <link rel="stylesheet" href="main.css">
   <!--Copied from Faviocon Generator Site-->
@@ -13,48 +11,55 @@
   <meta charset="UTF-8">
   <meta name="viewpoint" content="width=device-width,inital-scale=1">
       
-    <div class="header-frame">
-        
-      <div class="header">
-
-        <div id="header-left">
-
-          <h3 id="name"> Aaron Langley </h2>
-
-        </div>
-
-        <div id="header-right">
-
-          <h3 id="email"> alangley345@gmail.com </h4>
-
-        </div>
-      </div>
-
-    </div>
-
+   
 </head>
 
 <body>
+  <div id="body-frame">
+  <div id="content-wraper">  
+    <div id="header">
 
-    <div class="resume">
+      <div id="header-left">
+
+        <h3 id="name"> Aaron Langley </h2>
+
+      </div>
+
+      <div id="header-right">
+
+        <h3 id="email"> alangley345@gmail.com </h4>
+
+      </div>
+    </div>
+
+  
+
+    <div id="resume">
 
       <!--- Start Skill section--->
       <div class="section">
 
         <h1 class="section-title"> Skills </h1>
+        
+        <div id="skills-left">
+          <ul>
+            <li>Windows administration</li>
+            <li>Linux administration</li>
+            <li>Zabbix, PRTG, script-triggered alerts</li>
+            <li>HL7 data manipulations</li>
+            <li>System Integration</li>
+          </ul>
+        </div>
 
-        <ul>
-
-          <li>Windows Server</li>
-          <li>CI/CD - Git, Github Actions</li>
-          <li>System Monitoring Tools- Zabbix, PRTG</li>
-          <li>Terraform</li>
-          <li>Scripting - bash, powershell, python</li>
-          <li>Linux administration</li>
-          <li>AWS</li>
-          <li>SQL/NoSQL</li>
-
-        </ul>
+        <div id="skills-right">
+          <ul>
+            <li>Git, Github Actions</li>
+            <li>Terraform</li>
+            <li>Scripting - bash, powershell, python, C#</li>
+            <li>AWS</li>
+            <li>SQL/NoSQL</li>
+          </ul>
+        </div>
 
       </div>
 
@@ -62,15 +67,12 @@
       <div class="section">
 
         <h1 class="section-title"> Projects </h1>
-
-        <p>Cloud Resume Challenge</p>
-
-        <ul>
-
-          <li>Built a CI/CD for a CDN distributed static site with an API backend that tracks user visits using AWS. Technologies: S3, Cloudfront, DynamoDB, API Gateway, Python, Terraform, Git, Github Actions and Lambda.</li>
-
-        </ul>
-
+          <div>
+            <p>Cloud Resume Challenge -  <a href="https://github.com/alangley345/cloudresume" target="_blank">Github</a></p>
+              <ul>
+                <li>Built a CI/CD for a CDN distributed static site with an API backend that tracks user visits using AWS. Technologies: S3, Cloudfront, DynamoDB, API Gateway, Lambds Python, Javascript, Bash, Terraform, Git, and Github Actions.</li>
+              </ul>
+          </div>
 
       </div>
       
@@ -79,14 +81,15 @@
 
         <h1 class="section-title"> Experience </h1>
 
-        <p>System Administrator, Jun. 2021 - Current, Claxton Hepburn Medical Center - Ogdensburg, NY</p>
+        <p class="job-title">Systems Administrator, Jun. 2021 - Current, Claxton Hepburn Medical Center - Ogdensburg, NY</p>
 
         <ul>
-          <li>Responsible for building and maintaining data flows using HIS reporting, SQL, Powershell.</li>
-          <li>Work with stakeholders and vendors to identify and implement solutions.</li>
+          <li>Responsible for building, documenting and maintaining data flows between HIS/EHR platforms using scripting, interface engines and vendor provided tooling.</li>
+          <li>Modify and create reports using SQL, and proprietary tools (eCW EBO, Meditech NPR)</li>
+          <li>Work with stakeholders and vendors to identify, implement and maintain solutions vital to hospital workflows.</li>
         </ul>
 
-        <p>Network Engineer, Jan. 2021 - May 2021, Claxton Hepburn Medical Center - Ogdensburg, NY</p>
+        <p class="job-title">Network Engineer, Jan. 2021 - May 2021, Claxton Hepburn Medical Center - Ogdensburg, NY</p>
         
         <ul>
           <li>Spearheaded AD overhaul resulting in over 2000 AD objects removed, job functional roles defined.</li>
@@ -96,7 +99,7 @@
           <li>Used Google Apps Script and Google Workspace system to build an equipment request site.</li>
         </ul>
 
-        <p>IT Service Desk Associate, Aug. 2019 - Jan. 2021, at Liberty Utilities (formerly Enbridge SLG) - Massena, NY</p>
+        <p class="job-title">IT Service Desk Associate, Aug. 2019 - Jan. 2021, at Liberty Utilities (formerly Enbridge SLG) - Massena, NY</p>
 
         <ul>
           <li>Responsible for IAM across multiple systems.</li>
@@ -105,18 +108,13 @@
           <li>Migrated Office 365 Exchange environment to on-prem Exchange server as part of acquisition.</li>
         </ul>
 
-        <p>IS Computer Technician, Oct. 2018 - Aug. 2019, Claxton Hepburn Medical Center - Ogdensburg, NY</p>
+        <p class="job-title">IS Computer Technician, Oct. 2018 - Aug. 2019, Claxton Hepburn Medical Center - Ogdensburg, NY</p>
 
         <ul>
           <li>Member of a 4 man technician team supporting hundreds of users and endpoints across 10 sites and a sister hospital facility.</li>
         </ul>
 
       </div>
-
-
-
-
-
 
        <!--- Start Certifications section--->
       <div class="section">
@@ -141,11 +139,6 @@
 
       </div>
 
-
-
-
-
-
       <!--- Start Education section--->
       <div class="section">
 
@@ -157,21 +150,32 @@
       </div>
 
     </div>
+    
+    <!--- Icons and Page Count--->
+    <footer id="footer" onload="showCount();">
+      <div id="footer-bar">
+        <div id="icons">
+          <div class="icon" id="github">
+            <a href="https://github.com/alangley345" target="_blank"> 
+              <img src="./assets/github-favicon.png" alt="Github Logo" width="25" height="25">
+            </a>
+          </div>
+
+          <div class="icon" id="linkedin">
+            <a href="https://linkedin.com/in/alangley345" target="_blank">
+              <img src="./assets/linkedin-favicon.ico" alt="LinkedIn Logo" width="25" height="25">
+            </a> 
+          </div>
+        </div>
+
+        <div id="visitor-count">
+        <!--- Count from script.js ends up here --->
+          <p> Pages Visits <span id="visits"></span></p>
+        </div>
+      </div>
+    </footer>
+  
+  </div>
+  </div>
 </body>
 
-<footer onload="showCount();">
-    <div class = footer>
-      <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="light" data-type="VERTICAL"
-        data-vanity="aaron-langley-701196164" data-version="v1"><a class="badge-base__link LI-simple-link"
-        href="https://www.linkedin.com/in/aaron-langley-701196164?trk=profile-badge">Aaron Langley</a>
-      </div>
-
-      </div id="visitor-count">
-
-        <!--- Count from script.js ends up here --->
-        <p> Pages Visits <span id="visits"></span></p>
-
-      </div>
-
-    </div>
-</footer>
