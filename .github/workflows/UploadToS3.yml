@@ -3,12 +3,8 @@ name: Upload to resume.aaronlangley.net S3 bucket
 on:
   push:
     paths:
-      - '**.js'
-      - '**.css'
-      - '**.html'
-      - '**.png'
-      - '**.ico'
-      - '**.webmanifest' 
+      - 'site/**'
+      
   workflow_dispatch:
 
 jobs:
