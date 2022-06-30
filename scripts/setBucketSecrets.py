@@ -27,9 +27,8 @@ pubKey   = response.get('key')
 pubKeyID = response.get('key_id')
 
 #put secret
-newSecret = encrypt(pubKey , "resume.aaronlangley.net" )
+newSecret = encrypt(pubKey, 'test' )
 
-putBucket = requests.put(get_url , headers={'Authorization': f'token {token}'}, data={"key_id": json.dumps(pubKeyID), "encrypted_value": json.dumps(newSecret)})
+putBucket = requests.put(get_url , headers={'Authorization': f'token {token}'}, data={'key_id': json.dumps(pubKeyID), 'encrypted_value': json.dumps(newSecret)})
 
 print(pubKeyID)
-print(json.dumps(newSecret))
