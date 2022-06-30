@@ -1,4 +1,4 @@
-name: Function Testing
+name: Frontend Function Testing
     
 on: 
   push:

@@ -2,13 +2,32 @@ name: Deploy with Terraform
 
 on:
   push:
-    paths:
-      - '**.tf'
     branches:
       - main
-  
 
 jobs:
+  Zip_And_Commit:
+    name: Create zips and add them to repo
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@main
+    
+    - name: Make Lambda Zips
+      working-directory: scripts
+      shell: bash
+      run: |
+        bash makeZip.sh
+
+    - name: GIT commit and push all changed files
+      env: 
+        CI_COMMIT_MESSAGE: Created with DeploywithTerraform.yml
+        CI_COMMIT_AUTHOR: Github Actions
+      run: |
+        git config --global user.name "${{ env.CI_COMMIT_AUTHOR }}"
+        git config --global user.email "alangley345@users.noreply.github.com"
+        git commit -a -m "${{ env.CI_COMMIT_MESSAGE }}"
+        git push
+
   Terraform:
     name: Terraform Apply
     runs-on: ubuntu-latest

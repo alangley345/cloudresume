@@ -10,13 +10,15 @@ def lambda_handler(event, context):
         return {
             'statuscode': 200,
             'headers': {
-                    'Access-Control-Allow-Origin': '*',
+                    'Access-Control-Allow-Headers': 'Content-Type',
+                    'Access-Control-Allow-Origin': 'https://resume.aaronlangley.net',
+                    'Access-Control-Allow-Methods': 'GET'
             },
             'body':
                 
                 table.update_item(
                 Key={
-                        'event': 'test',
+                        'event': 'prod',
                 },
                 UpdateExpression= 'set visits = visits + :inc',
                 ExpressionAttributeValues={

@@ -13,22 +13,36 @@ def encrypt(public_key: str, secret_value: str) -> str:
   return b64encode(encrypted).decode("utf-8")
 
 #request variables
-owner = "alangley345"
-repo  = "cloudresume"
-bucketName = "BUCKET_NAME"
-get_url   =  f"https://api.github.com/repos/{owner}/{repo}/actions/secrets/public-key"
-put_url   =  f"https://api.github.com/repos/{owner}/{repo}/actions/secrets/{bucketName}"
-token = os.environ.get('GITHUB_TOKEN')
+owner      = "alangley345"
+repo       = "cloudresume"
+secretName = "BUCKET_NAME"
+get_url    = f'https://api.github.com/repos/{owner}/{repo}/actions/secrets/public-key'
+put_url    = f'https://api.github.com/repos/{owner}/{repo}/actions/secrets/{secretName}'
+bucket     = 'resume.aaronlangley.net'
+token      = os.environ.get('GITHUB_TOKEN')
+header     = {"Authorization":f"token {token}","Accept":"application/vnd.github.v3+json"}
 
 #get public key
-response = requests.get(get_url , headers={'Authorization': f'token {token}'})
+response = requests.get(get_url,headers=header)
 response = response.json()
 pubKey   = response.get('key')
 pubKeyID = response.get('key_id')
+newSecret = encrypt(pubKey,bucket)
 
+<<<<<<< HEAD
 #put secret
 newSecret = encrypt(pubKey, 'test' )
 
 putBucket = requests.put(get_url , headers={'Authorization': f'token {token}'}, data={'key_id': json.dumps(pubKeyID), 'encrypted_value': json.dumps(newSecret)})
 
 print(pubKeyID)
+=======
+payload = {"encrypted_value":f"{newSecret}","key_id":f"{pubKeyID}"}
+putBucket = requests.put(put_url,headers=header,data=payload)
+
+#debug
+print(response)
+print(payload)
+print(putBucket.json())
+#print(put_url)
+>>>>>>> 0d7c6d6fd6209bb4a71b41ed2c64552ec27e1390

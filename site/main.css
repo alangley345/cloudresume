@@ -1,158 +1,115 @@
-@import url('https://fonts.googleapis.com/css?family=Lora');
-
-
-
-
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 
 body{
-
-
-
-  font-family: Lora;
-
-
+  height: auto;
+  font-family: 'Roboto', sans-serif;
 
 }
 
+#body-frame {
+  position: relative;
+  min-height: 100vh;
+}
 
+#content-wraper {
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 25px;
+}
 
+#header {
+  height: 25px;
+  width: 100%;
+  background-color: #5cacfc;
+  position: absolute;
+  top: 0;
+  padding: 5px;
+}
 
+#footer{
+  position:absolute;
+  margin: auto;
+  bottom:0;
+  height: 25px;
+  width: 100%;
+  background-color: #5cacfc;
+  padding: 5px;
+  text-align: right;
+}
 
-
+#footer-bar{
+  display: flex;
+}
 
 * {
-
-
-
   max-width: 800px;
-
-
-
   margin: auto;
-
-
-
 }
 
-
-
-
-
-
-
-.header {
-
-
-
-  height: 25px;
-
-
-
-  width: 100%;
-
-
-
-  background-color: #86a9ba;
-
-
-
-  position: fixed;
-
-
-
-  top: 0;
-
-
-
-  padding: 5px;
-
-
-
-}
-
-
-
-
-
-
-
-.resume {
-
-
-
+#resume {
+  position: relative;
   padding-top: 25px;
-
-
-
+  padding-bottom: 25px;
 }
-
-
-
-
-
-
 
 .section {
-
-
-
+  float: left;
   padding: 10px
-
-
-
 }
-
-
-
-
-
-
 
 .section-title{
-
-
-
   text-decoration: underline;
-
-
-
 }
-
-
 
 #header-left {
-
-
-
+  padding-left: 5px;
   float:left;
-
-
-
 }
-
-
-
-
-
-
 
 #header-right {
-
-
-
+  padding-right: 10px;
   float:right
-
-
-
 }
 
-.footer{
-  height: 50px;
+#skills-left  { 
+  float:left;  
+}
+
+#skills-right { 
+  float:right; 
+}
 
 
+.job-title {
+  font-style:italic;
+}
 
-  width: 100%;
+.icon{
+  float: left;
+  padding:5px;
+  margin-top: -5px;
+  cursor: pointer;
+}
+
+.icon:hover{
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+#icons{
+  display: flex;
+
+  
+}
+
+#visitor-count{
+  display: flex;
+}
+
+#visits{
+  padding-right: 10px;
+  margin-top: -5px;
+  
 
 }
